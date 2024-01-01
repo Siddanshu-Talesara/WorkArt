@@ -8,6 +8,7 @@ import {BulkUploadComponent} from './AdminPannel/bulk-upload/bulk-upload.compone
 import {ResumeUploadComponent} from './AdminPannel/resume-upload/resume-upload.component';
 import {ResumeSearchComponent} from './AdminPannel/resume-search/resume-search.component';
 import {MisImportComponent} from './AdminPannel/mis-import/mis-import.component';
+import {ReportingComponent} from './AdminPannel/reporting/reporting.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'sign-up', component:SignUPComponent },
   { path: 'resume', component:ResumeUploadComponent },
   { path: 'resume-search', component:ResumeSearchComponent},
-  {path:'mis-import',component:MisImportComponent}
+  {path:'mis-import',component:MisImportComponent},
+  {path:'reports',component:ReportingComponent}
 ];
 
 @NgModule({

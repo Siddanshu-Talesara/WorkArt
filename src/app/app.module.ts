@@ -12,6 +12,7 @@ import { BulkUploadComponent } from './AdminPannel/bulk-upload/bulk-upload.compo
 import { ResumeUploadComponent } from './AdminPannel/resume-upload/resume-upload.component';
 import { ResumeSearchComponent } from './AdminPannel/resume-search/resume-search.component';
 import { MisImportComponent } from './AdminPannel/mis-import/mis-import.component';
+import { ReportingComponent } from './AdminPannel/reporting/reporting.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MisImportComponent } from './AdminPannel/mis-import/mis-import.componen
     BulkUploadComponent,
     ResumeUploadComponent,
     ResumeSearchComponent,
-    MisImportComponent
+    MisImportComponent,
+    ReportingComponent
   ],
   imports: [
     BrowserModule,
