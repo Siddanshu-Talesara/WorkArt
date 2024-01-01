@@ -1,0 +1,350 @@
+<div class="page-header card">
+  <div class="row align-items-end">
+    <div class="col-lg-8">
+      <div class="page-header-title">
+        <i class="feather icon-home bg-c-blue"></i>
+        <div class="d-inline">
+          <h5>Dashboard</h5>
+          <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="page-header-breadcrumb">
+        <ul class=" breadcrumb breadcrumb-title">
+          <li class="breadcrumb-item">
+            <a href="index-2.html"><i class="feather icon-home"></i></a>
+          </li>
+          <li class="breadcrumb-item"><a href="#!">Dashboard</a> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pcoded-inner-content">
+  <div class="main-body">
+    <div class="page-wrapper">
+      <div class="page-body">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="nav-tabs-custom">
+              <ul class="nav nav-tabs">
+                <li class="active" data-toggle="tooltip" title="" data-original-title="Resume Bulk upload"><a
+                    data-toggle="tab" href="#uploader" data-sec="all"><i class="fa fa-cloud-upload text-light-blue"></i>
+                    Bulk Upload</a></li>
+                <li data-toggle="tooltip" title="" data-original-title="Total files in auto process queue"><a
+                    data-toggle="tab" href="#autoqueue" data-sec="autoqueue"><span id="queuedfiles"
+                      class="label label-success" style="margin-right:5px;" data-count="0">0 </span> Auto Queued</a>
+                </li>
+                <li data-toggle="tooltip" title="" data-original-title="Queued processing error files"><a
+                    data-toggle="tab" href="#autoerror" data-sec="autoerror"><span id="errorfiles"
+                      class="label label-danger" style="margin-right:5px;" data-count="60">60 </span> Queued Errors</a>
+                </li>
+                <li class="" data-toggle="tooltip" title="" data-original-title="Resume Parsing Analytics"><a
+                    data-toggle="tab" href="#uploadananlysis" aria-expanded="false"><i
+                      class="fa fa-pie-chart text-orange"></i> Parsing Analytics</a></li>
+               
+
+              </ul>
+
+              <div class="tab-content">
+                <div id="uploader" class="tab-pane active">
+
+                  <div class="col-md-12">
+                    <form class="dropzone" id="form-bulk-upload">
+                      <div class="dz-default dz-message">
+                        <h2>
+                          <i class=" fa fa-cloud-upload blue fa-3x text-red"></i>
+                          <b>Drop files to upload </b><small>(or click)</small>
+                          <input type="hidden" value="bulk" name="_act" />
+                        </h2>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-md-12">
+                    <br />
+                    <a id="autobulkadd" class="btn btn-primary pull-right btn-autoproceed ajax-ui" omethod="post"
+                      href="#" data-toggle="tooltip" title=""
+                      data-original-title="Auto Process All CVs. Click &amp; System parse it.">Auto <i
+                        class="fa fa-forward"></i></a>
+                    <a class="btn btn-primary pull-right btn-proceed " data-toggle="tooltip" title=""
+                      data-original-title="Manual Process. One by one profile wizard." style="margin-right:5px;"
+                      href="#">Manual <i class="fa  fa-play"></i></a>
+                    <a id="profilecreatedate" class="btn btn-info pull-right daterangesingle " style="margin-right:5px;"
+                      data-toggle="tooltip" title="" data-original-title="Set Profile Create Date"><i
+                        class="fa fa-calendar"></i><ejs-daterangepicker></ejs-daterangepicker></a>
+                    <button id="clear-dropzone" class="btn btn-danger pull-right" style="margin-right:5px;"
+                      data-toggle="tooltip" title="" data-original-title="Delete All"><i
+                        class="fa fa-trash"></i></button>
+                    <span id="dzfilecount" class="btn btn-warning pull-right" style="margin-right:5px;"
+                      data-toggle="tooltip" title="" data-original-title="Total Uploaded Files">0</span>
+                    <p>
+                      Allowed File Formats: <code>.doc</code>, <code>.docx</code>, <code>.pdf</code>, <code>.rtf</code>,
+                      <code>.txt</code> <small class="text-red">(Max 200 Files. Each file size &lt; 500KB)</small>
+                    </p>
+                  </div>
+                  <div id="preview" class="dropzone-previews"></div>
+
+
+                </div><!-- /.tab-pane -->
+                <div id="autoqueue" class="tab-pane">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="autoqueuetoolbar toolbar">
+                        <label>
+                          <select class="form-control" id="autoqueuestatus" tabindex="-1">
+                            <option value="">10</option>
+                            <option value="0">25</option>
+                            <option value="1">50</option>
+                            <option value="2">100</option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="autoqueuetoolbar toolbar">
+                        <label>
+                          <select class="form-control" id="autoqueuestatus" tabindex="-1">
+                            <option value="">Status</option>
+                            <option value="0">Pending</option>
+                            <option value="1">Done</option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="autoqueuetoolbar toolbar">
+                        <div class="form-control  adaterange" style="width: auto;"><a href="javascript:;"><i
+                              class="fa fa-calendar"></i> </a>
+                        </div>
+                      </div>
+                      <div id="autoqueue-list_filter" class="dataTables_filter">
+                        <label>
+                          <div class="input-group">
+                            <input type="search" class="form-control" style='height: 35px;' placeholder="">
+                            <div class="input-group-btn">
+                              <button class="btn btn-sm btn-default" style='height: 35px; margin-top: 13%;'>
+                                <i class="fa fa-search "></i>
+                              </button>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+
+                      <table id="autoqueue-list" class="table table-bordered table-striped DataTable">
+                        <thead>
+                          <tr>
+                            <th>UploadOn</th>
+                            <th>File</th>
+                            <th>Status</th>
+                            <th>Profile</th>
+                            <th>JobID</th>
+                            <th>Apply Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th colspan='6' class='text-center'>No Data Here</th>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th>UploadOn</th>
+                            <th>File</th>
+                            <th>Status</th>
+                            <th>Profile</th>
+                            <th>JobID</th>
+                            <th>Application</th>
+                          </tr>
+                        </tfoot>
+                      </table>
+                      <div class="dataTables_info" id="autoqueue-list_info" role="status" aria-live="polite">Showing 1
+                        to 10
+                        of 112 entries</div>
+                      <div class="dataTables_paginate paging_simple_numbers" id="autoqueue-list_paginate">
+                        <ul class="pagination">
+                          <li class="paginate_button previous disabled" id="autoqueue-list_previous"><a href="#"
+                              aria-controls="autoqueue-list" data-dt-idx="0" tabindex="0">Previous</a></li>
+                          <li class="paginate_button active"><a href="#" aria-controls="autoqueue-list" data-dt-idx="1"
+                              tabindex="0">1</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="autoqueue-list" data-dt-idx="2"
+                              tabindex="0">2</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="autoqueue-list" data-dt-idx="3"
+                              tabindex="0">3</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="autoqueue-list" data-dt-idx="4"
+                              tabindex="0">4</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="autoqueue-list" data-dt-idx="5"
+                              tabindex="0">5</a></li>
+                          <li class="paginate_button disabled" id="autoqueue-list_ellipsis"><a href="#"
+                              aria-controls="autoqueue-list" data-dt-idx="6" tabindex="0">…</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="autoqueue-list" data-dt-idx="7"
+                              tabindex="0">12</a></li>
+                          <li class="paginate_button next" id="autoqueue-list_next"><a href="#"
+                              aria-controls="autoqueue-list" data-dt-idx="8" tabindex="0">Next</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                  </div><!-- /.row -->
+                </div><!-- /.tab-pane -->
+                <div id="autoerror" class="tab-pane">
+                  <div class="alert  alert-warning">
+                    <h4><i class="icon fa fa-warning"></i> Notice!</h4>Once Error resumes downloaded. It will be
+                    deleted
+                    from our server permanantly.<br />Can download 25 Parsing error files in one batch.<br />Start
+                    next
+                    download only after successful completion of previous batch download.
+                  </div>
+                  <div class="row">
+
+                    <div class="col-md-12">
+                      <div class="autoqueuetoolbar toolbar">
+                        <label>
+                          <select class="form-control" id="autoqueuestatus" tabindex="-1">
+                            <option value="">10</option>
+                            <option value="0">25</option>
+                            <option value="1">50</option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="autoqueuetoolbar toolbar">
+                        <label>
+                          <select class="form-control" id="autoqueuestatus" tabindex="-1">
+                            <option value="">Status</option>
+                            <option value="2">Incomplete Information</option>
+                            <option value="3">Parsing Error</option>
+                            <option value="4">Bigger Size</option>
+                            <option value="5">No File</option>
+                          </select>
+                        </label>
+                        &nbsp;
+                        <label>
+                      <a id="parsererrorcv" class="btn btn-flat btn-warning multicheck" href="javascript:;"
+                        data-toggle="tooltip" title="" data-original-title="Download Files">
+                        <i class="fa  fa-cloud-download">
+                        </i>
+                      </a>
+                      &nbsp;
+                      <a id="delerrorcv" data-toggle="tooltip" title=""
+                        data-original-title="Delete Selected Error Files" href="javascript:;"
+                        class="btn btn-flat btn-danger multicheck">
+                        <i class="fa fa-trash">             
+                        </i>
+                      </a>
+                      </label>
+                      </div>
+                      <div id="autoqueue-list_filter" class="dataTables_filter">
+                        <label>
+                          <div class="input-group">
+                            <input type="search" class="form-control" style='height: 35px;' placeholder="">
+                            <div class="input-group-btn">
+                              <button class="btn btn-sm btn-default" style='height: 35px; margin-top: 13%;'>
+                                <i class="fa fa-search "></i>
+                              </button>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <table id="autoerror-list" class="table table-bordered table-striped DataTable">
+                        <thead>
+                          <tr>
+                            <th><input type="checkbox" class="stids select-all minimal" /></th>
+                            <th>UploadOn</th>
+                            <th>File</th>
+                            <th>JobID</th>
+                            <th>Status</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th><input type="checkbox" class="stids select-all minimal" /></th>
+                            <th colspan='4' class='text-center'>No Data Here</th>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th><input type="checkbox" class="stids select-all minimal" /></th>
+                            <th>UploadOn</th>
+                            <th>File</th>
+                            <th>JobID</th>
+                            <th>Status</th>
+
+                          </tr>
+                        </tfoot>
+                      </table>
+                      <div class="dataTables_info" id="autoqueue-list_info" role="status" aria-live="polite">Showing 1
+                        to 10
+                        of 112 entries</div>
+                      <div class="dataTables_paginate paging_simple_numbers" id="autoqueue-list_paginate">
+                        <ul class="pagination">
+                          <li class="paginate_button previous disabled" id="autoqueue-list_previous"><a href="#"
+                              aria-controls="autoqueue-list" data-dt-idx="0" tabindex="0">Previous</a></li>
+                          <li class="paginate_button active"><a href="#" aria-controls="autoqueue-list" data-dt-idx="1"
+                              tabindex="0">1</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="autoqueue-list" data-dt-idx="2"
+                              tabindex="0">2</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="autoqueue-list" data-dt-idx="3"
+                              tabindex="0">3</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="autoqueue-list" data-dt-idx="4"
+                              tabindex="0">4</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="autoqueue-list" data-dt-idx="5"
+                              tabindex="0">5</a></li>
+                          <li class="paginate_button disabled" id="autoqueue-list_ellipsis"><a href="#"
+                              aria-controls="autoqueue-list" data-dt-idx="6" tabindex="0">…</a></li>
+                          <li class="paginate_button "><a href="#" aria-controls="autoqueue-list" data-dt-idx="7"
+                              tabindex="0">12</a></li>
+                          <li class="paginate_button next" id="autoqueue-list_next"><a href="#"
+                              aria-controls="autoqueue-list" data-dt-idx="8" tabindex="0">Next</a></li>
+                        </ul>
+                      </div>
+                    </div>              
+                  </div><!-- /.row -->
+                </div><!-- /.tab-pane -->
+
+                <div id="uploadananlysis" class="tab-pane ">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="andaterange" style="width: auto;" class="pull-left"><a href="javascript:;"><i
+                            class="fa fa-calendar"></i> </a></div>
+                      <div id="uploadanalyticsbarchart" style="height:380px; display: flex;justify-content: center;">
+                        <canvas id='chart'></canvas>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <table id="upload-analytics-list" class="table table-bordered table-striped DataTable">
+                        <thead>
+                          <tr>
+                            <th>Date</th>
+                            <th>Upload</th>
+                            <th>Queue</th>
+                            <th>Success</th>
+                            <th>Error</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th colspan='5' class='text-center'>No Data Here</th>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th>Total</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  </div><!-- ./row -->
+
+                </div><!-- /.tab-pane -->
+
+
+              </div><!-- /.tab-content -->
+            </div><!-- /.nav-tabs-custom -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

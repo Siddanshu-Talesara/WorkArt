@@ -1,0 +1,155 @@
+<div class="pcoded-inner-content">
+    <div class="main-body">
+        <div class="page-wrapper">
+            <div class="page-body">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        MIS Files Upload
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Resumes</a></li>
+        <li class="active" >MIS Upload </li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div id="msg" ></div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active" data-toggle="tooltip" title="" data-original-title="MIS File Bulk upload" ><a data-toggle="tab" href="#misupload" aria-expanded="true"><i class="fa fa-cloud-upload text-light-blue"></i> Files Upload</a></li>
+              <li class="" data-toggle="tooltip" title="" data-original-title="File Process Status" ><a data-toggle="tab" href="#misstatus" aria-expanded="false"><i class="fa fa-list-ul text-green"></i>  Files Status</a></li>
+              <li class="" data-toggle="tooltip" title="" data-original-title="File Parsing Analytics" ><a data-toggle="tab" href="#misananlysis" aria-expanded="false"><i class="fa fa-pie-chart text-orange"></i> Parsing Analytics</a></li>
+            </ul>
+            <div class="tab-content">
+              <div id="misupload" class="tab-pane active" >
+                <form   class="dropzone" id="form-bulk-upload">
+                    <div class="dz-default dz-message">
+                        <h2>
+                            <i class=" fa fa-cloud-upload blue fa-3x text-red"></i>
+                            <b>Drop MIS files to upload </b><small>(or click)</small>
+                            <input type="hidden" value="bulk" name="_act" />
+                        </h2>
+                    </div>						
+                </form>
+                <br/>
+                <p>
+                    <button   class="btn btn-secondary text-primary pull-right btn-proceed "  ><span class="badge bg-aqua" >0</span> MIS Files in queue</button>
+                    Allowed File Formats: <code>.xls</code>, <code>.xlsx</code> 
+                </p>
+                <br/>
+                <div id="preview" class="dropzone-previews"></div> 
+              
+              </div><!-- /.tab-pane -->
+              <div id="misstatus" class="tab-pane">
+                  <table id="misfiles-list" class="table table-bordered table-striped DataTable">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>File Name</th>
+                        <th>Recruiter</th>
+                        <th>Status</th>
+                        <th>Success</th>
+                        <th>Duplicate</th>
+                        <th>Error</th>
+                        <th>Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th  colspan="8" class='text-center'> No Data Here</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <th colspan="4">Page Total</th>
+                        <th>0</th>
+                        <th>0</th>
+                        <th>0</th>
+                        <th>0</th>
+                      </tr>
+                    </tfoot>
+                  </table>
+              </div><!-- /.tab-pane -->
+              <div id="misananlysis" class="tab-pane " >
+                <div class="row">
+                         <div class="col-md-12">
+                        <div class="andaterange" style="width: auto; " class="pull-left" ><a href="javascript:;"  ><i class="fa fa-calendar"></i> </a></div>
+                        <div style='height: 380px !important; display: flex;justify-content: center;'><canvas id='chart' style="height: 100px !important;"></canvas></div> 
+                    </div> 
+                    
+                    <div class="col-md-12">
+                        <table id="mis-analytics-list" class="table table-bordered table-striped DataTable">
+                        <thead>
+                          <tr>
+                            <th>Date</th>
+                            <th>Success</th>
+                            <th>Duplicate</th>
+                            <th>Error</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th colspan='4'>Total</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            </tr>
+                        </tfoot>
+                        </table>
+                    </div>
+                </div><!-- ./row -->
+
+              </div><!-- /.tab-pane -->
+              
+              
+              
+              
+              
+              
+              
+              
+              
+            </div><!-- /.tab-content -->
+          </div>				
+        </div>
+      </div>
+
+     
+     
+     
+     
+                
+  
+    </section><!-- /.content -->
+        <div class="content body">
+            <div class="callout callout-warning">
+                <h3><i class="fa  fa-exclamation-triangle"></i> Important</h3>
+                <p class="lead">You upload multiple MIS files at a time.<br/>ATS will proceed each MIS and add them to your database.</p>
+                <ul>
+                    <li><b>File format:</b> MIS file should be standard .xls or .xlsx file </li>
+                    <li><b>First Row Of MIS:</b> First row of MIS file must be the default <code>COLUMN NAME</code> provided by source.<br/>You need to delete any blank or un-necessary rows existing above the column names for columns auto mapping.</li>
+                    <li><b>Alert Popups:</b> MIS file should not prompt any kind of popup alert.</li>
+                    <li><b>Oldness:</b> MIS file <code>should not older than last  6 Month</code>. It will prevent jobseekers records which are  outdated. Your personal database should be latest.</li>
+                    <li><b>MIS upload:</b> You only need to upload your available recent MIS files and you never wait to complete the process. ATS keep clear record against this upload.</li>
+                    <li><b>Auto Importing:</b> After MIS submission, ATS will automatically start importing records from each file and also lookout for dupltcate profiles.</li>
+                    <li><b>Proceeded Files:</b> After MIS preceeded, ATS will delete MIS file from the server. ATS will never keep proceeded MIS file.</li>
+                </ul>	
+            </div>
+        </div>
+
+    <!-- /.content -->
+</div><!-- /.content-wrapper -->
+</div>
+</div>
+</div>
