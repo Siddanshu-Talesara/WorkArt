@@ -35,8 +35,20 @@
                                             <div class="form-group">
                                                 <label >Complete Name: <font color="red">*</font></label>
                                                 <input type="text" class="form-control" formControlName="CompleteName"
-                                                    placeholder="Complete Name" value="">
+                                                    placeholder="Complete Name" name="CompleteName" />
                                             </div>
+                                            <div *ngIf="registerForm.controls['CompleteName'].touched">
+                                                <div *ngIf="registerForm.controls['CompleteName'].errors?.['required']">
+                                                   <label class="text-danger"> name is required</label>
+                                                </div>
+                                                <div *ngIf="registerForm.controls['CompleteName'].errors?.['pattern']">
+                                                  <label class="text-danger">Only alphabets are allowed</label>
+                                                </div>
+                                                <div *ngIf="registerForm.controls['CompleteName'].errors?.['minlength']">
+                                                 <label class="text-danger">Minimum 4 leters must be inserted</label>
+                                               </div>
+                                              </div>
+                                            
                                         </div>
 
                                         <div class="col-md-3">

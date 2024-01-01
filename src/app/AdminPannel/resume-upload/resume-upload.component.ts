@@ -15,14 +15,14 @@ export class ResumeUploadComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      CompleteName: ['', Validators.required],
-      Primary_Email_ID: ['',Validators.email],
-      Primary_Contact_Number: ['', Validators.required],
-      Function : ['', [Validators.required, Validators.required ]],
-      City:['', [Validators.required, Validators.required]],
+      CompleteName: ['',Validators.required, Validators.required.prototype('[A-Za-z]*'),Validators.minLength(4)],
+      Primary_Email_ID: ['',Validators.email,Validators.required],
+      Primary_Contact_Number: ['', Validators.required.prototype('[/^(0|91)?[6-9][0-9]{9}]*')],
+      Function : ['', [Validators.required]],
+      City:['', [Validators.required]],
       Gender: ['', Validators.required],
       acceptTerms: [false, Validators.requiredTrue],
-      Keywords : ['',Validators.required],
+      Keywords : ['',Validators.required,Validators.minLength(4)],
       AttachResume:['',Validators.required],
       Experience:[],
       Current_CTC:[],
