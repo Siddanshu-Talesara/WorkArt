@@ -22,8 +22,8 @@
 
                         <!-- Default box -->
                         <div class="box box-info">
-                            <form role="form" id="form-resume" name="form-resume" method="post"
-                                enctype="multipart/form-data" action="/resumes/resume-action">
+                            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" role="form" id="form-resume" name="form-resume" method="post"
+                                enctype="multipart/form-data" >
                                 <div class="box-header with-border">
                                     <h3 class="box-title">Resume</h3>
                                 </div>
@@ -33,64 +33,60 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="jsname">Complete Name: <font color="red">*</font></label>
-                                                <input type="text" class="form-control" name="jsname" id="jsname"
+                                                <label >Complete Name: <font color="red">*</font></label>
+                                                <input type="text" class="form-control" formControlName="CompleteName"
                                                     placeholder="Complete Name" value="">
                                             </div>
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="jsemail">Primary Email ID: <font color="red">*</font>
+                                                <label >Primary Email ID: <font color="red">*</font>
                                                 </label>
-                                                <input type="text" class="form-control" name="jsemail" id="jsemail"
+                                                <input type="text" class="form-control" formControlName="Primary_Email_ID"
                                                     placeholder="Email ID" value="" required>
                                             </div>
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="jsmobile">Primary Contact Number: <font color="red">*</font>
+                                                <label>Primary Contact Number: <font color="red">*</font>
                                                 </label>
-                                                <input type="text" class="form-control" name="jsmobile" id="jsmobile"
-                                                    value="" >
+                                                <input type="text" class="form-control" formControlName=" Primary_Contact_Number"   value="" >
                                             </div>
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="jsexperience">Experience: </label>
-                                                <input type="text" placeholder="Exp in Yr.Mth" id="jsexperience"
-                                                    name="jsexperience" class="form-control" value="" />
+                                                <label>Experience: </label>
+                                                <input type="text" placeholder="Exp in Yr.Mth" formControlName="Experience" class="form-control" value="" />
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="jsctccurent">Current CTC </label>
-                                                <input type="text" id="jsctccurent" name="jsctccurent"
+                                                <label>Current CTC </label>
+                                                <input type="text" formControlName="Current_CTC"
                                                     class="form-control" placeholder="Current  CTC in LPA" value="" />
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="jsctcexpect">Expected CTC </label>
-                                                <input type="text" placeholder="Expected  CTC in LPA" id="jsctcexpect"
-                                                    name="jsctcexpect" class="form-control" value="" />
+                                                <label >Expected CTC </label>
+                                                <input type="text" placeholder="Expected  CTC in LPA" formControlName="Expected_CTC" class="form-control" value="" />
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="jsnoticeperiod">Notice Period </label>
+                                                <label>Notice Period </label>
                                                 <input type="text" placeholder="Notice Period in Days"
-                                                    id="jsnoticeperiod" name="jsnoticeperiod" class="form-control"
-                                                    value="" />
+                                                  formControlName="Notice_Period" class="form-control"  value="" />
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="jsfunction">Function <font color="red">*</font></label>
-                                                <select id="jsfunction" name="jsfunction" class="form-control select2"
+                                                <label>Function <font color="red">*</font></label>
+                                                <select formControlName="Function" class="form-control select2"
                                                     style="width: 100%;">
                                                     <option value="">Select Function</option>
                                                     <option value="1">Accounts / Finance / Tax / CS / Audit</option>
@@ -166,8 +162,8 @@
 
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="jscity">City <font color="red">*</font></label>
-                                                <select id="jscity" name="jscity" class="form-control select2"
+                                                <label>City <font color="red">*</font></label>
+                                                <select formControlName="City" class="form-control select2"
                                                     style="width: 100%;">
                                                     <option value="">Select City</option>
                                                     <optgroup label="Andhra Pradesh">
@@ -491,8 +487,8 @@
 
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="jsgender">Gender <font color="red">*</font></label>
-                                                <select id="jsgender" name="jsgender" class="form-control select2"
+                                                <label>Gender <font color="red">*</font></label>
+                                                <select formControlName="Gender" class="form-control select2"
                                                     style="width: 100%;">
                                                     <option value="">Select Gender</option>
                                                     <option value="1">Male</option>
@@ -503,8 +499,8 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="jsgraduation">Graduation <font color="red">*</font></label>
-                                                <select id="jsgraduation" name="jsgraduation" class="form-control"
+                                                <label>Graduation <font color="red">*</font></label>
+                                                <select formControlName="Graduation" class="form-control"
                                                     style="width: 100%;">
                                                     <option value="">Select Graduation</option>
                                                     <optgroup label="BA">
@@ -833,24 +829,22 @@
 
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="jsdesignation">Current Designation: </label>
-                                                <input type="text" class="form-control" name="jsdesignation"
-                                                    id="jsdesignation" placeholder="Curent Designation" value="">
+                                                <label>Current Designation: </label>
+                                                <input type="text" class="form-control" formControlName="Current_Designation" placeholder="Curent Designation" value="">
                                             </div>
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="currcompany">Current Company: </label>
-                                                <input type="text" class="form-control" name="currcompany"
-                                                    id="currcompany" placeholder="Curent Employer" value="">
+                                                <label>Current Company: </label>
+                                                <input type="text" class="form-control" formControlName="Current_Company" placeholder="Curent Employer" value="">
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="jspostgraduation">Post Graduation </label>
-                                                <select id="jspostgraduation" name="jspostgraduation"
+                                                <label>Post Graduation </label>
+                                                <select formControlName="Post_Graduation"
                                                     class="form-control" style="width: 100%;">
                                                     <option value="">Select Post Graduation</option>
                                                     <optgroup label="CA">
@@ -1465,16 +1459,16 @@
 
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="jsdob">Birth Date: </label>
-                                                <!-- <input type="text" class="form-control dateonly " name="jsdob" id="jsdob"
-                                    placeholder="Birth Date" value="">--> <ejs-datepicker></ejs-datepicker>
+                                                <label>Birth Date: </label>
+                                                <input type="text" class="form-control dateonly " formControlName="Birth_Date"
+                                    placeholder="Birth Date" value="">
                                             </div>
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="mstatus">Marital Status: </label>
-                                                <select id="mstatus" name="mstatus" class="form-control select2"
+                                                <label >Marital Status: </label>
+                                                <select formControlName="Marital_Status" class="form-control select2"
                                                     style="width: 100%;">
                                                     <option value="">Select Marital Status</option>
                                                     <option value="1">Single/Un-married</option>
@@ -1489,8 +1483,8 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="jsindustry">Industry </label>
-                                                <select id="jsindustry" name="jsindustry" class="form-control select2"
+                                                <label>Industry </label>
+                                                <select formControlName="Industry" class="form-control select2"
                                                     style="width: 100%;">
                                                     <option value="">Select Industry</option>
                                                     <option value="1">Account/Finance/Tax consulting</option>
@@ -1582,24 +1576,21 @@
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="jsemailalt">Alternate Email ID: </label>
-                                                <input type="text" class="form-control" name="jsemailalt"
-                                                    id="jsemailalt" placeholder="Email ID" value="">
+                                                <input type="text" class="form-control" formControlName="Alternate_Email_ID" placeholder="Email ID" value="">
                                             </div>
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label for="jsmobilealt">Alternate Contact Number: </label>
-                                                <input type="text" class="form-control" name="jsmobilealt"
-                                                    id="jsmobilealt" value="">
+                                                <input type="text" class="form-control"  formControlName="Alternate_Contact-Number" id="jsmobilealt" value="">
                                             </div>
                                         </div>
 
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="jskeywords">Keywords <font color="red">*</font></label>
-                                                <input type="text" id="jskeywords" name="jskeywords"
-                                                    class="form-control tagsinput"
+                                                <input type="text"  class="form-control tagsinput" formControlName="Keywords"
                                                     placeholder="Keywords related to profile" value="" />
                                             </div>
                                         </div>
@@ -1608,14 +1599,14 @@
                                             <div class="form-group">
                                                 <label for="resumefile">Attach Resume <font color="red">*?</font>
                                                 </label>
-                                                <input type="file" id="resumefile" name="resumefile" required />
+                                                <input type="file" id="resumefile"  formControlName="AttachResume" name="resumefile" required />
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <br />
-                                                <label for="nofile"><input type="checkbox" id="nofile" name="nofile"
+                                                <label for="nofile"><input  formControlName="acceptTerms" type="checkbox" id="nofile" name="nofile"
                                                         class="minimal" value="1" /> Will attach Resume file
                                                     later.</label>
                                             </div>
@@ -1627,15 +1618,7 @@
 
                                 </div><!-- /.box-body -->
                                 <div class="box-footer">
-                                    <input type="hidden" id="upresumefile" name="upresumefile" class="form-control"
-                                        value="" />
-                                    <input type="hidden" id="_id" name="_id" class="form-control" value="" />
-                                    <input type="hidden" id="_mode" name="_mode" class="form-control" value="" />
-                                    <input type="hidden" id="_oid" name="_oid" class="form-control" value="" />
-                                    <input type="hidden" id="_sec" name="_sec" class="form-control" value="" />
-                                    <input type="hidden" id="_emresid" name="_emresid" class="form-control" value="" />
-                                    <input type="hidden" id="_emid" name="_emid" class="form-control" value="" />
-                                    <input type="hidden" id="_act" name="_act" class="form-control" value="add" />
+
                                     <button class="btn btn-primary" type="submit">Submit <i
                                             class="fa fa-arrow-circle-right"></i></button>
                                 </div>
