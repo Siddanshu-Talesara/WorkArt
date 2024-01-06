@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder,FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-resume-upload',
@@ -12,46 +12,44 @@ export class ResumeUploadComponent implements OnInit {
   
 
   constructor(private formBuilder: FormBuilder) { }
-
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
-      CompleteName: ['',Validators.required, Validators.required.prototype('[A-Za-z]*'),Validators.minLength(4)],
-      Primary_Email_ID: ['',Validators.email,Validators.required],
-      Primary_Contact_Number: ['', Validators.required.prototype('[/^(0|91)?[6-9][0-9]{9}]*')],
-      Function : ['', [Validators.required]],
-      City:['', [Validators.required]],
-      Gender: ['', Validators.required],
-      acceptTerms: [false, Validators.requiredTrue],
-      Keywords : ['',Validators.required,Validators.minLength(4)],
-      AttachResume:['',Validators.required],
-      Experience:[],
-      Current_CTC:[],
-      Expected_CTC:[],
-      Notice_Period:[],
-      Current_Designation:[],
-      Current_Company:[],
-      Post_Graduation:[],
-      Birth_Date:[],
-      Marital_Status:[],
-      Industry:[],
-      Alternate_Email_ID:[],
-      Alternate_Contact_Number:[]
+    this.registerForm = new FormGroup({
+      'CompleteName':new FormControl("",[Validators.required,Validators.pattern('[A-Za-z]*'),Validators.minLength(4)]),
+      'Primary_Email_ID': new FormControl('',[Validators.email,Validators.required]),
+      'Primary_Contact_Number': new FormControl("",[Validators.required,Validators.pattern("^[0-9]*$")]),
+      'Function' : new FormControl('',[Validators.required]),
+      'City':new FormControl('',[Validators.required]),
+      'Gender': new FormControl('',[ Validators.required]),
+      'acceptTerms': new FormControl([false, Validators.requiredTrue]),
+      'Keywords ': new FormControl('',[Validators.required,Validators.minLength(4)]),
+      'AttachResume':new FormControl('',[Validators.required]),
+      'Experience':new FormControl('',[]),
+      'Current_CTC':new FormControl('',[]),
+      'Expected_CTC':new FormControl('',[]),
+      'Notice_Period':new FormControl('',[]),
+      'Current_Designation':new FormControl('',[]),
+      'Current_Company':new FormControl('',[]),
+      'Post_Graduation':new FormControl('',[]),
+      'Graduation':new FormControl('',[Validators.required]),
+      'Birth_Date':new FormControl('',[]),
+      'Marital_Status':new FormControl('',[]),
+      'Industry':new FormControl('',[]),
+      'Alternate_Email_ID':new FormControl('',[]),
+      'Alternate_Contact_Number':new FormControl('',[])
 
     })
     }
     get f() { return this.registerForm.controls; }
 
     onSubmit() {
-        this.submitted = true;
+    
          console.log(this.registerForm)
         // stop here if form is invalid
         if (this.registerForm.invalid) {
-
+          this.submitted = true;
             return;
         }
 
-        // display form values on success
-        alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
     }
 
     onReset() {

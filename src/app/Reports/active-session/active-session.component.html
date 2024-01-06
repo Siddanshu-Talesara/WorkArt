@@ -1,0 +1,156 @@
+<section class="content-header">
+    <h1>
+      Recruiter Active Session Report 
+      <!--small class="text-red" >Shows last one year records</small-->
+    </h1>
+    <ol class="breadcrumb">
+      <li ><a id="filter-collapse" href="javascript:;" data-toggle="collapse" data-target="#filters"  ><i class="fa  fa-sort-amount-desc " data-toggle="tooltip"  data-original-title="Filters"  title="Filters" data-trigger="hover" data-placement="top" ></i></a></li>
+      <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="/reports2/index">Reports 2.1</a></li>
+      <li class="active" data="reports">Recruiter Active Session</li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content-header">
+      
+      <div class="row">
+        
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-aqua"><i class="ion ion-ios-list-outline"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text"> Total Session</span>
+                <span id="cnttotal" class="info-box-number">4</span>
+              </div><!-- /.info-box-content -->
+            </div><!-- /.info-box -->
+          </div><!-- /.col -->
+
+
+
+
+          <!-- fix for small devices only -->
+          <div class="clearfix visible-sm-block"></div>
+      </div>
+      
+  </section><!-- /.content -->
+  
+
+  <!-- Filter content -->
+  <section id="filters" class="content-header  collapse">
+      <div class="box box-solid no-margin" >
+        <div class="box-header with-border">
+          <h3 class="box-title">Report Filter</h3>
+        </div><!-- /.box-header -->
+        <form id="form-filter" name="form-filter" method="post" enctype="multipart/form-data" onsubmit="return false;" class="form filter" action="#">
+        <div class="box-body filter ">
+          <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="daterange">Date range</label>
+                  <input type="text"  id="daterange"   class="form-control daterange " placeholder="Date Range" value="" autocomplete="off" />
+                </div>
+              </div>
+
+          
+              <div class="col-md-6">
+                <div class="form-group ">
+                  <label for="recruiter">Recruiter </label>
+                  <select id="recruiter" name="recruiter" class="form-control select2" style="width:100%;" >
+                  <option value="" >All Recruiters</option><option value="3186"   >Jaydeep Singh Rajpurohit</option><option value="3187"   >Yogshree Bundhela </option><option value="3188"   >Kajal Vaghela </option><option value="3189"   >Soumya Jaiswal </option>						</select> 
+                </div>
+              </div>
+          
+          </div>
+         
+        </div><!-- /.box-body -->
+        <div class="box-footer filter ">
+             <input type="hidden" id="_act" name="_act" class="form-control" value="analytics" />
+             <button id="btn-src" class="btn btn-primary submit" type="submit" >Filter <i class="fa fa-arrow-circle-right"></i></button>
+             <button id="resetfilters" class="btn btn-flat btn-default pull-right" type="button"    ><i class="fa fa-times-circle-o"></i> Reset</button>
+       </div>
+       </form>
+      </div>			
+    
+  </section><!-- /.content -->
+  
+
+  <!-- Main content -->
+  <section class="content">
+    
+    <div id="msg"></div>
+   
+  <div class="row">
+      <div class="col-xs-12">
+        <div class="nav-tabs-custom">
+          <ul class="nav nav-tabs">
+              <li class="active"  data-toggle="tooltip" title="" data-original-title="Internal Approvals"  ><a data-toggle="tab" href="#ananlysis" aria-expanded="true"><i class="fa fa-bar-chart text-orange"></i>  Recruiter-Session </a></li>
+              <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Schedule"><a id="schedulereport" href="javascript:;" class="text-right" ><i class="fa  fa-clock-o"></i></a></li>
+              <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Export"><a id="exportrecords" href="javascript:;" class="text-right" ><i class="fa  fa-file-excel-o"></i></a></li>
+              <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Print"><a id="printreport" href="javascript:;" class="text-right" ><i class="fa fa-print"></i> </a></li>
+          </ul>
+          <div class="tab-content">
+            
+            <div id="ananlysis" class="tab-pane active" >
+
+                  <div class="row">
+                      
+                      
+                      <div id="loadchart" class="col-md-12 col-sm-12 col-xs-12">
+                          <div id="analyticsbarchart"></div> 
+                      </div><!-- /#result -->
+                      
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                          <div class="loading"><div class="loader loader-xl"></div></div>
+                          <div class="empty-result hidden">
+                              <div class="empty-result-content">
+                                  <i class="fa fa-th-list fa-4x"></i>
+                                  <h3>No Records Found</h3>
+                                  <p>There is no records available related to provided filters.<br>
+                                  You can modify the filters to view respected report.</p>
+                              </div>
+                          </div> 
+                          
+                      </div>
+                      
+
+                      <div id="loadrecords" class="col-md-12 col-sm-12 col-xs-12 hidden">
+                          <a href="javascript:;" class="btn btn-default btn-flat btn-block "  ><b>Show Records <i class="fa fa-chevron-down" ></i></b></a>
+                      </div>
+
+                  </div>
+                  
+                  <div id="records" class="row hidden">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                          <table id="analytics-list" class="table table-bordered table-striped DataTable">
+                              <thead>
+                                <tr>
+                                  <th>Recruiter</th>  
+                                  <th>Browser</th>
+                                  <th>IP Address</th>
+                                  <th>Log On</th>
+                                  <th>Last Active On</th>
+                                  <th class="non-printable">#</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              </tbody>
+                              <tfoot>
+                              </tfoot>
+                          </table>
+                      </div>						
+                  </div>
+            </div><!-- /.tab-pane -->
+            
+          </div><!-- /.tab-content -->
+        </div>				
+        
+        
+      </div><!-- /.col -->
+      <!-- fix for small devices only -->
+      <div class="clearfix"></div>
+  </div><!-- /.row -->
+
+
+      
+  </section><!-- /.content -->

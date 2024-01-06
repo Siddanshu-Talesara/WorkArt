@@ -23,7 +23,7 @@
                         <!-- Default box -->
                         <div class="box box-info">
                             <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" role="form" id="form-resume" name="form-resume" method="post"
-                                enctype="multipart/form-data" >
+                                enctype="multipart/form-data" novalidate >
                                 <div class="box-header with-border">
                                     <h3 class="box-title">Resume</h3>
                                 </div>
@@ -33,9 +33,9 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label >Complete Name: <font color="red">*</font></label>
+                                                <label for='CompleteName' >Complete Name: <font color="red">*</font></label>
                                                 <input type="text" class="form-control" formControlName="CompleteName"
-                                                    placeholder="Complete Name" name="CompleteName" />
+                                                   id='CompleteName' placeholder="Complete Name" name="CompleteName" required/>
                                             </div>
                                             <div *ngIf="registerForm.controls['CompleteName'].touched">
                                                 <div *ngIf="registerForm.controls['CompleteName'].errors?.['required']">
@@ -47,7 +47,7 @@
                                                 <div *ngIf="registerForm.controls['CompleteName'].errors?.['minlength']">
                                                  <label class="text-danger">Minimum 4 leters must be inserted</label>
                                                </div>
-                                              </div>
+                                            </div>
                                             
                                         </div>
 
@@ -56,7 +56,16 @@
                                                 <label >Primary Email ID: <font color="red">*</font>
                                                 </label>
                                                 <input type="text" class="form-control" formControlName="Primary_Email_ID"
-                                                    placeholder="Email ID" value="" required>
+                                                    placeholder="Email ID" value="" required />
+                                            </div>
+                                            <div *ngIf="registerForm.controls['Primary_Email_ID'].touched">
+                                                <div *ngIf="registerForm.controls['Primary_Email_ID'].errors?.['email']">
+                                                   <label class="text-danger">Please enter valid email</label>
+                                                </div>
+                                                <div *ngIf="registerForm.controls['Primary_Email_ID'].errors?.['required']">
+                                                  <label class="text-danger"> email is required</label>
+                                                </div>
+                                              
                                             </div>
                                         </div>
 
@@ -64,8 +73,14 @@
                                             <div class="form-group">
                                                 <label>Primary Contact Number: <font color="red">*</font>
                                                 </label>
-                                                <input type="text" class="form-control" formControlName=" Primary_Contact_Number"   value="" >
+                                                <input type="tel" class="form-control" formControlName=" Primary_Contact_Number" value="" required/>
                                             </div>
+                                                <div *ngIf="((registerForm.controls['Primary_Contact_Number'].errors?.['required'] && submitted == true) && registerForm.controls['Primary_Contact_Number'].touched )">
+                                                   <label class="text-danger"> Primary Contact Number is required</label>
+                                                </div>
+                                                <div *ngIf="(registerForm.controls['Primary_Contact_Number'].errors?.['pattern'] && submitted == true)">
+                                                    <label class="text-danger"> Primary Contact Number is required</label>
+                                                 </div>
                                         </div>
 
                                         <div class="col-md-3">
@@ -100,7 +115,7 @@
                                                 <label>Function <font color="red">*</font></label>
                                                 <select formControlName="Function" class="form-control select2"
                                                     style="width: 100%;">
-                                                    <option value="">Select Function</option>
+                                                    <option value="" disabled>Select function</option>
                                                     <option value="1">Accounts / Finance / Tax / CS / Audit</option>
                                                     <option value="2">Consulting / Agent / Freelancer</option>
                                                     <option value="3">Architecture / Interior Design</option>
@@ -169,6 +184,11 @@
                                                     <option value="55">Shipping & Maritime / Merchant Navy</option>
                                                     <option value="1001">Other</option>
                                                 </select>
+                                            </div>
+                                            <div *ngIf="registerForm.controls['Function'].touched">
+                                                <div *ngIf="registerForm.controls['Function'].errors?.['required']">
+                                                   <label class="text-danger"> function is required</label>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -495,6 +515,11 @@
                                                     </optgroup>
                                                 </select>
                                             </div>
+                                            <div *ngIf="registerForm.controls['City'].touched">
+                                                <div *ngIf="registerForm.controls['City'].errors?.['required']">
+                                                   <label class="text-danger"> City is required</label>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div class="col-md-3">
@@ -502,10 +527,15 @@
                                                 <label>Gender <font color="red">*</font></label>
                                                 <select formControlName="Gender" class="form-control select2"
                                                     style="width: 100%;">
-                                                    <option value="">Select Gender</option>
+                                                    <option value="" disabled>Select Gender</option>
                                                     <option value="1">Male</option>
                                                     <option value="2">Female</option>
                                                 </select>
+                                            </div>
+                                            <div *ngIf="registerForm.controls['Gender'].touched">
+                                                <div *ngIf="registerForm.controls['Gender'].errors?.['required']">
+                                                   <label class="text-danger"> Gender is required</label>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -837,6 +867,11 @@
                                                     </optgroup>
                                                 </select>
                                             </div>
+                                            <div *ngIf="registerForm.controls['Graduation'].touched">
+                                                <div *ngIf="registerForm.controls['Graduation'].errors?.['required']">
+                                                   <label class="text-danger"> Graduation is required</label>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div class="col-md-3">
@@ -845,7 +880,6 @@
                                                 <input type="text" class="form-control" formControlName="Current_Designation" placeholder="Curent Designation" value="">
                                             </div>
                                         </div>
-
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Current Company: </label>
@@ -1482,7 +1516,7 @@
                                                 <label >Marital Status: </label>
                                                 <select formControlName="Marital_Status" class="form-control select2"
                                                     style="width: 100%;">
-                                                    <option value="">Select Marital Status</option>
+                                                    <option value="" disabled>Select Marital Status</option>
                                                     <option value="1">Single/Un-married</option>
                                                     <option value="2">Married</option>
                                                     <option value="3">Divorced</option>
@@ -1498,7 +1532,7 @@
                                                 <label>Industry </label>
                                                 <select formControlName="Industry" class="form-control select2"
                                                     style="width: 100%;">
-                                                    <option value="">Select Industry</option>
+                                                    <option value="" disabled>Select Industry</option>
                                                     <option value="1">Account/Finance/Tax consulting</option>
                                                     <option value="2">Advertising/PR/MR/Events</option>
                                                     <option value="3">Agriculture/Dairy/Forestry/Fishing</option>
@@ -1605,6 +1639,15 @@
                                                 <input type="text"  class="form-control tagsinput" formControlName="Keywords"
                                                     placeholder="Keywords related to profile" value="" />
                                             </div>
+                                      
+                                                <!-- <div *ngIf="(registerForm.controls['Keywords'].errors?.['required'])&& submitted==true">
+                                                   <label class="text-danger"> Keywords is required</label>
+                                                </div>
+                                            
+                                                <div *ngIf="registerForm.controls['Keywords'].errors?.['minlength']">
+                                                   <label class="text-danger"> Keywords have minimum 4 length is required</label>
+                                                </div>
+                               -->
                                         </div>
 
                                         <div class="col-md-6">
@@ -1612,6 +1655,11 @@
                                                 <label for="resumefile">Attach Resume <font color="red">*?</font>
                                                 </label>
                                                 <input type="file" id="resumefile"  formControlName="AttachResume" name="resumefile" required />
+                                            </div>
+                                            <div *ngIf="registerForm.controls['AttachResume'].touched">
+                                                <div *ngIf="registerForm.controls['AttachResume'].errors?.['required']">
+                                                   <label class="text-danger"> AttachResume is required</label>
+                                                </div>
                                             </div>
                                         </div>
 

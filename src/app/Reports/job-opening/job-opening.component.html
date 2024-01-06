@@ -1,0 +1,209 @@
+<div class="pcoded-inner-content">
+    <div class="main-body">
+        <div class="page-wrapper">
+            <div class="page-body">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Job Report
+      </h1>
+
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div id="msg" ></div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active" data-toggle="tooltip" title="" data-original-title="Job Opening" ><a data-toggle="tab" href="#jobOpening" aria-expanded="true">Job  Openings</a></li>
+              <li class="" data-toggle="tooltip" title="" data-original-title=" Job Opening Vacancies Report" ><a data-toggle="tab" href="#jobVacancies" aria-expanded="false"><i class="fa fa-list-ul text-green"></i> Job Vacancies </a></li>
+              <li class="" data-toggle="tooltip" title="" data-original-title="Job Opening Association Report" ><a data-toggle="tab" href="#jobAssociaton" aria-expanded="false"><i class="fa fa-pie-chart text-orange"></i> Job Opening Association</a></li>
+            </ul>
+            <div class="tab-content">
+              <div id="jobOpening" class="tab-pane active" >
+                <section class="content-header"> 
+                  <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                      <div class="info-box">
+                      <span class="info-box-icon bg-gray"><i class="fa fa-list"></i></span>
+                      <div class="info-box-content">
+                        <span class="info-box-text"> Total</span>
+                        <span class="info-box-number">1</span>
+                      </div><!-- /.info-box-content -->
+                      </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+                    
+                    <div class="col-md-2 col-sm-2 col-xs-6">
+                      <div class="info-box">
+                      <span class="info-box-icon bg-gray"><i class="fa fa-list"></i></span>
+                      <div class="info-box-content">
+                        <span class="info-box-text"> Draft</span>
+                        <span class="info-box-number">0</span>
+                      </div><!-- /.info-box-content -->
+                      </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+            
+                    <div class="col-md-2 col-sm-2 col-xs-6">
+                      <div class="info-box">
+                      <span class="info-box-icon bg-gray"><i class="fa fa-list"></i></span>
+                      <div class="info-box-content">
+                        <span class="info-box-text"> Open</span>
+                        <span class="info-box-number">1</span>
+                      </div><!-- /.info-box-content -->
+                      </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+            
+                    <div class="col-md-2 col-sm-2 col-xs-6">
+                      <div class="info-box">
+                      <span class="info-box-icon bg-gray"><i class="fa fa-list"></i></span>
+                      <div class="info-box-content">
+                        <span class="info-box-text"> On-Hold</span>
+                        <span class="info-box-number">0</span>
+                      </div><!-- /.info-box-content -->
+                      </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+            
+                    <div class="col-md-2 col-sm-2 col-xs-6">
+                      <div class="info-box">
+                      <span class="info-box-icon bg-gray"><i class="fa fa-list"></i></span>
+                      <div class="info-box-content">
+                        <span class="info-box-text"> Closed</span>
+                        <span class="info-box-number">0</span>
+                      </div><!-- /.info-box-content -->
+                      </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+                  </div>
+                      
+            
+                    </section><!-- /.content -->            
+                    <!-- Main content -->  
+                    <section class="content">              
+                      <div class="row">
+                        <div class="col-xs-12">
+                    <div class="nav-tabs-custom">
+                            <ul class="nav nav-tabs">
+                      <li class="active"  data-toggle="tooltip" title="" data-original-title="Job Openings"  ><a data-toggle="tab" href="#" aria-expanded="true"><i class="fa fa-pie-chart text-orange"></i> Job Openings Analytics</a></li>
+                      <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Schedule"><a id="schedulereport" href="#" class="text-right" ><i class="fa  fa-clock-o"></i></a></li>
+                      <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Export"><a id="exportrecords" href="#" class="text-right" ><i class="fa  fa-file-excel-o"></i></a></li>
+                      <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Print"><a id="printreport" href="#" class="text-right" ><i class="fa fa-print"></i> </a></li>
+                            </ul>
+                          </div>				        
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </section><!-- /.content --> 
+              
+              </div><!-- /.tab-pane -->
+              <div id="jobVacancies" class="tab-pane">          
+                <!-- Main content -->
+                <section class="content-header">
+                    
+                  <div class="row">
+                    
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="info-box">
+                      <span class="info-box-icon bg-aqua"><i class="ion ion-ios-list-outline"></i></span>
+                      <div class="info-box-content">
+                        <span class="info-box-text"> Total Vacancies</span>
+                        <span id="cnttotal" class="info-box-number">1</span>
+                      </div><!-- /.info-box-content -->
+                      </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+          
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="info-box">
+                      <span class="info-box-icon bg-green"><i class="fa fa-list"></i></span>
+                      <div class="info-box-content">
+                        <span class="info-box-text">Current Month Vacancies</span>
+                        <span id="cntinmonth"  class="info-box-number">0</span>
+                      </div><!-- /.info-box-content -->
+                      </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+          
+                    <!-- fix for small devices only -->
+                    <div class="clearfix visible-sm-block"></div>
+                  </div>
+                    
+                </section><!-- /.content -->
+                
+                <!-- Main content -->
+                <section class="content">
+                  
+                  <div id="msg"></div>
+                     
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs">
+                          <li class="active"  data-toggle="tooltip" title="" data-original-title="Jobopening Vacancies"  ><a data-toggle="tab" href="#" aria-expanded="true"><i class="fa fa-bar-chart text-orange"></i>Jobopening Vacancies</a></li>
+                          <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Schedule"><a id="schedulereport" href="#:;" class="text-right" ><i class="fa  fa-clock-o"></i></a></li>
+                          <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Export"><a id="exportreport" href="#:;" class="text-right" ><i class="fa  fa-file-excel-o"></i></a></li>
+                          <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Print"><a id="printreport" href="#:;" class="text-right" ><i class="fa fa-print"></i> </a></li>
+                        </ul>
+                      </div>				
+                        
+                        
+                    </div><!-- /.col -->
+                  </div><!-- /.row -->             
+                </section><!-- /.content -->
+          </div><!-- /.tab-pane -->
+              <div id="jobAssociaton" class="tab-pane " >    
+        
+                <!-- Main content -->
+                <section class="content-header"> 
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="info-box">
+                  <span class="info-box-icon bg-aqua"><i class="ion ion-ios-list-outline"></i></span>
+                  <div class="info-box-content">
+                    <span class="info-box-text"> Total Associations</span>
+                    <span class="info-box-number">2</span>
+                  </div><!-- /.info-box-content -->
+                  </div><!-- /.info-box -->
+                </div><!-- /.col -->               
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="info-box">
+                  <span class="info-box-icon bg-green"><i class="fa fa-list"></i></span>
+                  <div class="info-box-content">
+                    <span class="info-box-text"> Job Openings</span>
+                    <span class="info-box-number">1</span>
+                  </div><!-- /.info-box-content -->
+                  </div><!-- /.info-box -->
+                </div><!-- /.col -->             
+              </div>                       
+                </section><!-- /.content -->   
+                <!-- Main content -->  
+                <section class="content">             
+                  <div class="row">
+                    <div class="col-xs-12">
+                <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs">
+                  <li class="active"  data-toggle="tooltip" title="" data-original-title="Job Openings"  ><a data-toggle="tab" href="#" aria-expanded="true"><i class="fa fa-pie-chart text-orange"></i> Association Analytics</a></li>
+                  <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Schedule"><a id="schedulereport" href="#:;" class="text-right" ><i class="fa  fa-clock-o"></i></a></li>
+                  <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Export"><a id="exportreport" href="#:;" class="text-right" ><i class="fa  fa-file-excel-o"></i></a></li>
+                  <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Print"><a id="printreport" href="#:;" class="text-right" ><i class="fa fa-print"></i> </a></li>
+                        </ul>
+                      
+                      </div>				
+                
+                
+                    </div><!-- /.col -->
+                    <!-- fix for small devices only -->
+                  </div><!-- /.row -->
+        
+        
+              
+                </section><!-- /.content -->               
+              </div><!-- /.tab-pane -->
+         </div><!-- /.tab-content -->
+          </div>				
+        </div>
+      </div> 
+    </section><!-- /.content -->
+
+    <!-- /.content -->
+</div><!-- /.content-wrapper -->
+</div>
+</div>
+</div>
