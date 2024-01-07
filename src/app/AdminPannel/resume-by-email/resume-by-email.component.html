@@ -1,0 +1,163 @@
+<section class="content-header">
+    <h1>
+      Resumes by Email 
+      <small>Last 1 Month record.</small>
+      <small class="text-red">Notice: Page Updated, please refresh using <code>CTRL + F5</code> incase not working.</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#">Resumes</a></li>
+      <li class="active">By Email</li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-aqua"><i class="ion ion-ios-email-outline"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Received</span>
+            <span class="info-box-number">0</span>
+            <span class="progress-description">
+              Last 30 Days
+            </span>
+          </div><!-- /.info-box-content -->
+        </div><!-- /.info-box -->
+      </div><!-- /.col -->
+
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-green"><i class="ion ion-ios-people-outline"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">SUCCESS</span>
+            <span class="info-box-number">0</span>
+            <span class="progress-description">
+              Last 30 Days
+            </span>
+          </div><!-- /.info-box-content -->
+        </div><!-- /.info-box -->
+      </div><!-- /.col -->
+
+      <!-- fix for small devices only -->
+      <div class="clearfix visible-sm-block"></div>
+
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">DUPLICATE</span>
+            <span class="info-box-number">0</span>
+            <span class="progress-description">
+             Last 30 Days
+            </span>
+          </div><!-- /.info-box-content -->
+        </div><!-- /.info-box -->
+      </div><!-- /.col -->
+
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-red"><i class="ion ion-ios-information-outline"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">ERROR</span>
+            <span class="info-box-number">0</span>
+            <span class="progress-description">
+              Do Manually
+            </span>
+          </div><!-- /.info-box-content -->
+        </div><!-- /.info-box -->
+      </div><!-- /.col -->
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="msg" ></div>
+
+        <div class="nav-tabs-custom">
+          <ul class="nav nav-tabs">
+            <li class="active" data-toggle="tooltip" title="" data-original-title="Error files when parsing" ><a data-toggle="tab" href="#erroredlist" aria-expanded="true"><i class="fa fa-exclamation-triangle text-red"></i> Parsing Error Files</a></li>
+            <li class="" data-toggle="tooltip" title="" data-original-title="Resume Parsing Analytics" ><a data-toggle="tab" href="#emlananlysis" aria-expanded="false"><i class="fa fa-pie-chart text-orange"></i> Parsing Analytics</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="erroredlist" class="tab-pane active">
+              <div class="alert  alert-warning" ><h4><i class="icon fa fa-warning"></i> Notice!</h4>Once  Error resumes downloaded. It will be deleted from our server permanantly.<br/>Can download 25 Parsing error files in one batch.<br/>Can download 10 Big size files in one batch.<br/>Start next download only after successful completion of previous batch download.</div>
+              <table id="emailed-resumes-list" class="table table-bordered table-striped DataTable">
+              <thead>
+                <tr>
+                  <th>From Email ID</th>
+                  <th>Reply Email ID</th>
+                  <th>ReceivedOn</th>
+                  <th>TrackCode</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>From Email ID</th>
+                  <th>Reply Email ID</th>
+                  <th>ReceivedOn</th>
+                  <th>TrackCode</th>
+                  <th>Status</th>
+                </tr>
+              </tfoot>
+            </table>
+
+            </div><!-- /.tab-pane -->
+
+            <div id="emlananlysis" class="tab-pane " >
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="input-group">
+                          <div class="input-group-addon andaterange">
+                          <a href="javascript:;"  ><i class="fa fa-calendar"></i> </a>
+                        </div>
+                        <div class="input-group-addon no-padding no-border">
+                          <select class="" id="aemailaccount" ><option value="" >Select Email ID</option></select>
+                        </div>
+                      </div>
+
+                        
+                      <div id="emlanalyticsbarchart"></div> 
+                  </div> 
+                  
+                  <div class="col-md-12">
+                      <table id="emresume-analytics-list" class="table table-bordered table-striped DataTable">
+                      <thead>
+                        <tr>
+                          <th>Date</th>
+                          <th>Received</th>
+                          <th>Queue</th>
+                          <th>Success</th>
+                          <th>Duplicate</th>
+                          <th>Error</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>Total</th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </tfoot>
+                      </table>
+                  </div>
+              </div><!-- ./row -->
+
+            </div><!-- /.tab-pane -->
+            
+            
+          </div><!-- /.tab-content -->
+        </div>				
+        
+        
+        
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </section><!-- /.content -->

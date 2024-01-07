@@ -1,0 +1,196 @@
+    <section class="content-header">
+      <h1>Job Openings</h1>
+      <ol class="breadcrumb">
+        <li ><a href="javascript:;" data-toggle="collapse" data-target="#jobsfilter"  ><i class="fa  fa-sort-amount-desc " data-toggle="tooltip"  data-original-title="Jobs Filter"  title="Jobs Filter" data-trigger="hover" data-placement="top" ></i></a></li>
+        <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/openings/manage">Job Openings</a></li>
+        <li class="active" ><a href="/openings/manage">Manage Jobs</a></li>
+      </ol>
+    </section>
+    
+    <!-- Main content -->
+    <section id="jobsoverview"  class="content-header">
+      <div class="row">
+        <div class="col-md-2 col-sm-2 col-xs-6">
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua "><i class="fa fa-list"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text"> Total Jobs</span>
+              <span class="info-box-number">0</span>
+            </div><!-- /.info-box-content -->
+          </div><!-- /.info-box -->
+        </div><!-- /.col -->
+
+        <div class="col-md-2 col-sm-2 col-xs-6">
+          <div class="info-box">
+            <span class="info-box-icon bg-maroon"><i class="fa fa-list"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text"> Drafts</span>
+              <span class="info-box-number">0</span>
+            </div><!-- /.info-box-content -->
+          </div><!-- /.info-box -->
+        </div><!-- /.col -->
+
+        <div class="col-md-2 col-sm-2 col-xs-6">
+          <div class="info-box">
+            <span class="info-box-icon bg-green"><i class="fa fa-list"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text"> Open Jobs</span>
+              <span class="info-box-number">0</span>
+            </div><!-- /.info-box-content -->
+          </div><!-- /.info-box -->
+        </div><!-- /.col -->
+
+        <div class="col-md-2 col-sm-2 col-xs-6">
+          <div class="info-box">
+            <span class="info-box-icon bg-orange"><i class="fa fa-list"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text"> Hold Jobs</span>
+              <span class="info-box-number">0</span>
+            </div><!-- /.info-box-content -->
+          </div><!-- /.info-box -->
+        </div><!-- /.col -->
+
+        <div class="col-md-2 col-sm-2 col-xs-6">
+          <div class="info-box">
+            <span class="info-box-icon bg-red"><i class="fa fa-list"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text"> Closed Jobs</span>
+              <span class="info-box-number">0</span>
+            </div><!-- /.info-box-content -->
+          </div><!-- /.info-box -->
+        </div><!-- /.col -->
+
+        <div class="col-md-2 col-sm-2 col-xs-6">
+          <div class="info-box info-box-buttons">
+            <a class="btn btn-block btn-info btn-flat" href="#"  ><i class="fa fa-list" ></i> Application Pipeline</a>
+            <a class="btn btn-block btn-success btn-flat m-t-20" href="#"  ><i class="fa fa-pencil" ></i> Post A New Job</a>
+          </div><!-- /.info-box -->
+        </div><!-- /.col -->
+
+        <!-- fix for small devices only -->
+        <div class="clearfix visible-sm-block"></div>
+      </div>
+    
+      <div class="row">
+        <div class="col-md-2 col-sm-2 col-xs-2 pull-right text-center">
+            
+        </div><!-- /.col -->
+        <!-- fix for small devices only -->
+        <div class="clearfix visible-sm-block"></div>
+      </div>
+    </section><!-- /.content -->
+    
+    <!-- Filter content -->
+    <section id="jobsfilter" class="content-header  collapse">
+        <div class="box box-solid no-margin" >
+          <div class="box-header with-border">
+            <h3 class="box-title">Jobs Filter</h3>
+          </div><!-- /.box-header -->
+          <form id="form-manage-filter" name="form-filter" method="post" enctype="multipart/form-data" action="/openings/manage-action" onsubmit="return false;" class="form filter" >
+          <div class="box-body filter ">
+           <div class="row">
+            <div class="col-md-4">
+              <div class="form-group ">
+                <label for="keywords">Job Opening </label>
+                <input type="text"  id="keywords" name="keywords" class="form-control tagsinput" placeholder="" value="" />
+              </div>
+            </div>
+            
+            <div class="col-md-4">
+              <div class="form-group ">
+                <label for="recruiter">Recruiter </label>
+                <select id="recruiter" name="recruiter" class="form-control select2" style="width:100%;" >
+                <option value="" >Select Recruiter</option><option value="3186"   >Jaydeep Singh Rajpurohit</option><option value="3187"   >Yogshree Bundhela </option><option value="3189"   >Soumya Jaiswal </option><option value="3230"   >Chandni Vaja </option><option value="3231"   >Kajal Vaghela </option>					</select>
+              </div>
+            </div>
+            
+            <div class="col-md-2">
+              <div class="form-group ">
+                <label for="status">Status </label>
+                <select id="status" name="status" class="form-control select2" style="width:100%;" >
+                    <option value="" > Select Job Status</option>
+                    <option value="1">Open</option>
+                    <option value="2">Hold</option>
+                    <option value="3">Close</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="col-md-2">
+              <div class="form-group ">
+                <label for="priority">Priority </label>
+                <select id="priority" name="priority" class="form-control select2" style="width:100%;" >
+                    <option value="" >Select Priority</option>
+                    <option value="3">High Priority</option>
+                    <option value="2">Medium Priority</option>
+                    <option value="1">Low Priority</option>
+                </select>
+              </div>
+            </div>
+           </div>
+           
+           <div class="row">
+           
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="daterange">Date range:</label>
+                <input type="text"  id="daterange"   class="form-control daterange " placeholder="Date Range" value="" autocomplete="off" />
+              </div>
+            </div>
+            
+            <div class="col-md-4">
+              <div class="form-group ">
+                <label for="company">Company </label>
+                <select id="company" name="company" class="form-control" style="width:100%;" >
+                    <option value="" >Select Company</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="col-md-2">
+              <div class="form-group ">
+                <label for="rating">Company Rating </label>
+                <select id="rating" name="rating" class="form-control select2" style="width:100%;"  >
+                    <option value="">Select Rating</option>
+                    <option value="1">Excellent</option>
+                    <option value="2">Good</option>
+                    <option value="3">Average</option>
+                    <option value="4">Poor</option>
+                </select>
+              </div>
+            </div>
+            
+            
+           </div>
+          </div><!-- /.box-body -->
+          <div class="box-footer filter ">
+               <input type="hidden" id="_act" name="_act" class="form-control" value="getresult" />
+               <button id="btn-src" class="btn btn-primary submit" type="submit" >Filter <i class="fa fa-arrow-circle-right"></i></button>
+               <button id="resetfilters" class="btn btn-flat btn-default pull-right" type="button"    ><i class="fa fa-times-circle-o"></i> Reset</button>
+         </div>
+         </form>
+        </div>			
+      
+    </section><!-- /.content -->
+    
+    <!-- Main content -->
+    <section class="content">
+        <div id="msg" ></div>
+        <div class="row">
+            <div id="result-pagination"  class="col-md-12">
+                <ul id="pagination" class="pagination pull-right m-t-0 m-b-0"></ul>
+                <a  class="displayview btn btn-success pull-right m-r-20 active" href="javascript:;" data-toggle="tooltip" data-original-title="Expanded View" data-value="expanded" ><i class="fa fa-th-list"></i></a>
+                <a class="displayview btn btn-default pull-right m-r-20" href="javascript:;" data-toggle="tooltip" data-original-title="Linear View" data-value="linear"  ><i class="fa fa-list-ul"></i></a>
+                <a class="btn btn-info pull-right m-r-20 modal-ui "   href="#" data-toggle="tooltip" data-original-title="MIS Export" >
+                    <i class="fa fa-cloud-download"></i>
+                </a>
+                <h3 class="m-t-0">
+                    <span class="label label-default result-count">0</span> Jobs  
+                </h3>		
+            </div>
+            
+        </div><!-- /.rows -->
+        
+        
+    </section><!-- /.content -->

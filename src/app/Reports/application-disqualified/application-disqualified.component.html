@@ -1,0 +1,199 @@
+<section class="content-header">
+    <h1>
+     Application Disqualify
+    </h1>
+    <ol class="breadcrumb">
+      <li ><a href="javascript:;" data-toggle="collapse" data-target="#filters"  ><i class="fa  fa-sort-amount-desc " data-toggle="tooltip"  data-original-title="Filters"  title="Filters" data-trigger="hover" data-placement="top" ></i></a></li>
+      <li class="active" data="reports">Application Disqualify</li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content-header">
+      
+  <div class="row">
+    
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="info-box">
+          <span class="info-box-icon bg-aqua"><i class="ion ion-ios-list-outline"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text"> Total Application</span>
+            <span class="info-box-number">0</span>
+          </div><!-- /.info-box-content -->  
+        </div><!-- /.info-box -->
+      </div><!-- /.col -->
+
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="info-box">
+          <span class="info-box-icon bg-green"><i class="fa fa-list"></i></span>    
+          <div class="info-box-content">
+            <span class="info-box-text"> Current Month Application</span>
+            <span class="info-box-number">0</span>
+          </div><!-- /.info-box-content -->
+        </div><!-- /.info-box -->
+      </div><!-- /.col -->
+      <!-- fix for small devices only -->
+      <div class="clearfix visible-sm-block"></div>
+  </div>
+      
+  </section><!-- /.content -->
+  
+
+  <!-- Filter content -->
+  <section id="filters" class="content-header  collapse">
+      <div class="box box-solid no-margin" >
+        <div class="box-header with-border">
+          <h3 class="box-title">Report Filter</h3>
+        </div><!-- /.box-header -->
+        <form id="form-filter" name="form-filter" method="post" enctype="multipart/form-data" onsubmit="return false;" class="form filter" action="/reports2/application-disqualify-action"  >
+          <div class="box-body filter ">
+              <div class="row">
+              
+                  <div class="col-md-4">
+                        <div class="form-group">
+                          <label for="jobopening">JobOpening </label>
+                          <select id="jobopening" name="jobopening" class="form-control select2 htmloptions " style="width:100%;" >
+                          <option value="" >Select Job Opening</option><option value="73221"   >73221 - Relationship Manager|~|Kotak Mahindra Life Insurance Company Limited</option>								</select>
+                        </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group ">
+                      <label for="company">Company </label>
+                      <select id="company" name="company" class="form-control" style="width:100%;" >
+                          <option value="" >Select Company</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="recruiter">Recruiter </label>
+                      <select id="recruiter" name="recruiter" class="form-control select2" style="width:100%;" >
+                      <option value="" >All Recruiters</option><option value="3186"   >Jaydeep Singh Rajpurohit</option><option value="3187"   >Yogshree Bundhela </option><option value="3188"   >Kajal Vaghela </option><option value="3189"   >Soumya Jaiswal </option>							</select>
+                    </div>
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                  <div class="col-md-4">
+                    <div class="form-group ">
+                      <label for="jobstatus">Job Status </label>
+                      <select id="jobstatus" name="jobstatus" class="form-control select2" style="width:100%;" >
+                          <option value="" > Select Job Status</option>
+                          <option value="1">Open</option>
+                          <option value="2">Hold</option>
+                          <option value="3">Close</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group ">
+                      <label for="pipelinestage">Stage-Status </label>
+                      <select id="pipelinestage" name="pipelinestage" class="form-control select2" style="width:100%;" >
+                          <option value="" >Select Application Stage</option><option value="1692-"   >SOURCED</option><option value="1693-"   >APPLIED</option><option value="1694-3426"   >SCREENED - To be Call</option><option value="1694-3427"   >SCREENED - Profile Suitable</option><option value="1695-3428"   >INTERNAL APPROVAL
+- Submitted</option><option value="1695-3429"   >INTERNAL APPROVAL
+- Hold</option><option value="1696-3430"   >CLIENT APPROVAL
+- Submitted</option><option value="1696-3431"   >CLIENT APPROVAL
+- Hold</option><option value="1697-3432"   >SHORTLISTED - Schedule Pending</option><option value="1698-3433"   >INTERVIEW - Telephonic Interview</option><option value="1698-3434"   >INTERVIEW - Video Interview</option><option value="1698-3435"   >INTERVIEW - Personal Interview</option><option value="1699-3436"   >SELECTED
+- Document Verification</option><option value="1699-3437"   >SELECTED
+- Back Ground check</option><option value="1700-3438"   >OFFER - Offer Pending</option><option value="1700-3439"   >OFFER - Offer Released</option><option value="1701-3440"   >HIRED - Yet To Join</option><option value="1701-3441"   >HIRED - Joined</option><option value="1701-3442"   >HIRED - Attrition</option>							</select>
+                    </div>
+                  </div>
+              
+
+                  <div class="col-md-4">
+                    <div class="form-group ">
+                      <label for="source">Application Source </label>
+                      <select id="source" name="source" class="form-control select2" style="width:100%;" >
+                          <option value="" >Select Source</option><option value="21"   >ABE | JobItus Bulk Email</option><option value="2"   >CAPP | Career Application</option><option value="34"   >CRE | Campus Referred</option><option value="33"   >ERE | Employee Referred</option><option value="32"   >FER | Freelancer Referred</option><option value="35"   >IAP | Indeed Application</option><option value="1"   >JAPP | Jobitus Application</option><option value="6"   >LIAPP | Linkedin Application</option><option value="15"   >LPI | Linkedin Profile Import</option><option value="4"   >MAPP | Monster Application</option><option value="23"   >MBE | Monster Bulk Email</option><option value="13"   >MPI | Monster Profile Import</option><option value="0"   >NA | Not Available</option><option value="3"   >NAPP | Naukri Application</option><option value="22"   >NBE | Naukri Bulk Email</option><option value="12"   >NPI | Naukri Profile Import</option><option value="11"   >PDR | Personal Database Referred</option><option value="10"   >PDR | Recruiter Bulk Upload</option><option value="7"   >SAPP | Shine Application</option><option value="25"   >SBE | Shine Bulk Email</option><option value="8"   >SMSAPP | SMS Application</option><option value="16"   >SPI | Shine Profile Import</option><option value="5"   >TAPP | TimesJobs Application</option><option value="24"   >TBE | TimesJobs Bulk Email</option><option value="14"   >TPI | Timesjobs Profile Import</option><option value="31"   >VER | Vendor Referred</option>							</select>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+
+                  
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="daterange">Date range</label>
+                      <input type="text"  id="daterange"   class="form-control daterange " placeholder="Date Range" value="" autocomplete="off" />
+                    </div>
+                  </div>
+                  
+
+                  <div class="col-md-4">  
+                    <div class="form-group">
+                      <label for="disqualifyreason">Disqualify Reason </label>
+                      <select id="disqualifyreasons" name="disqualifyreasons" class="form-control select2" style="width:100%;" >
+                      <option value="" >Select Disqualify Reason</option><option value="2730"   >Education not suitable</option><option value="2731"   >Experience not suitable</option><option value="2732"   >Required skillset not available</option><option value="2733"   >Work location not preferred</option><option value="2734"   >Expected salary not in range</option><option value="2735"   >Duplicate application</option><option value="2736"   >No Contact with jobseeker</option><option value="2737"   >Not looking for job change</option><option value="2738"   >Not interested for job opening</option><option value="2739"   >HR Interview rejected</option><option value="2740"   >Technical / Department interview rejected</option><option value="2741"   >Quit from process</option><option value="2742"   >Offer not accepted</option><option value="2743"   >Left after joining</option>							</select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group ">
+                      <label for="groupby">Group By </label>
+                      <select id="groupby" name="groupby" class="form-control select2" style="width:100%;" >
+                          <option value="" >Group By</option>
+                          <option value="date" >Date</option>
+                          <option value="month" >Months</option>
+                          <option value="recruiter" >Recruiters</option>
+                          <option value="company">Company</option>
+                          <option value="dqreason">Disqualify Reason</option>
+                          <option value="pstage">Stage-Status</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+              </div>
+          </div><!-- /.box-body -->
+        <div class="box-footer filter ">
+             <input type="hidden" id="_act" name="_act" class="form-control" value="analytics" />
+             <button id="btn-src" class="btn btn-primary submit" type="submit" >Filter <i class="fa fa-arrow-circle-right"></i></button>
+             <button id="resetfilters" class="btn btn-flat btn-default pull-right" type="button"    ><i class="fa fa-times-circle-o"></i> Reset</button>
+       </div>
+       </form>
+      </div>			
+    
+  </section><!-- /.content -->
+    
+
+  <!-- Main content -->
+  <section class="content">
+    
+    <div id="msg"></div>
+       
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="nav-tabs-custom"> 
+               <ul class="nav nav-tabs">
+                  <li class="active"  data-toggle="tooltip" title="" data-original-title="Application Disqualify"  ><a data-toggle="tab" href="#ananlysis" aria-expanded="true"><i class="fa fa-pie-chart text-orange"></i>Application Disqualify</a></li>
+                  <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Schedule"><a id="schedulereport" href="javascript:;" class="text-right" ><i class="fa  fa-clock-o"></i></a></li>
+                  <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Export"><a id="exportrecords" href="javascript:;" class="text-right" ><i class="fa  fa-file-excel-o"></i></a></li>
+                  <li class="pull-right" data-toggle="tooltip" title="" data-original-title="Print"><a id="printreport" href="javascript:;" class="text-right" ><i class="fa fa-print"></i> </a></li>
+              </ul>
+              
+         <div class="tab-content">
+              <div id="ananlysis" class="tab-pane active" >
+
+
+                  <div class="row">
+
+                      <div id="loadchart" class="col-md-12 col-sm-12 col-xs-12">
+                          <div id="analyticsbarchart"></div> 
+                      </div><!-- /#result -->
+
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                             
+              </div><!-- /.tab-pane -->
+            
+          </div><!-- /.tab-content -->
+        </div>				
+        
+        
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+
+</div>
+</div>
+      
+  </section><!-- /.content -->
