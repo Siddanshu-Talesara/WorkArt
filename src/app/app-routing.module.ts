@@ -24,17 +24,19 @@ import {RecruitorLoginComponent} from './Reports/recruitor-login/recruitor-login
 import {RmInstalltionComponent} from './Reports/rm-installtion/rm-installtion.component';
 import {JOBComponent} from './AdminPannel/job/job.component';
 import {ResumeByEmailComponent} from './AdminPannel/resume-by-email/resume-by-email.component';
-
+import { AdvancedComponent } from './Search/advanced/advanced.component';
+import {PeopleComponent} from './Search/people/people.component';
+import { LandingPageComponent } from './Login/landing-page/landing-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component:DashBoardComponent },
-  { path: 'sign-in', component:SignINComponent },
-  { path: 'loader', component:LoaderComponent },
-  { path: 'bulk-upload', component:BulkUploadComponent },
-  { path: 'sign-up', component:SignUPComponent },
-  { path: 'resume', component:ResumeUploadComponent },
-  { path: 'resume-search', component:ResumeSearchComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full' },
+  {path: 'home', component:DashBoardComponent },
+  {path: 'sign-in', component:SignINComponent },
+  {path: 'loader', component:LoaderComponent },
+  {path: 'bulk-upload', component:BulkUploadComponent },
+  {path: 'sign-up', component:SignUPComponent },
+  {path: 'resume', component:ResumeUploadComponent },
+  {path: 'resume-search', component:ResumeSearchComponent},
   {path:'mis-import',component:MisImportComponent},
   {path:'reports',component:ReportingComponent},
   {path:'job-Opening',component:JobOpeningComponent},
@@ -51,7 +53,10 @@ const routes: Routes = [
   {path:'recuritor-login',component:RecruitorLoginComponent},
   {path:'rm-installtiom',component:RmInstalltionComponent},
   {path:'job',component:JOBComponent},
-  {path:'resume-by-email',component:ResumeByEmailComponent}
+  {path:'resume-by-email',component:ResumeByEmailComponent},
+  {path:'advanced',component:AdvancedComponent},
+  {path:'people',component:PeopleComponent},
+  {path:'landing',component:LandingPageComponent}
 ];
 
 @NgModule({

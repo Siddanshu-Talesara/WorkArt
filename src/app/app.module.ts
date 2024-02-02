@@ -33,6 +33,7 @@ import { PeopleComponent } from './Search/people/people.component';
 import { AdvancedComponent } from './Search/advanced/advanced.component';
 import { InterviewsComponent } from './AdminPannel/interviews/interviews.component';
 import { CalendarComponent } from './AdminPannel/calendar/calendar.component';
+import { LandingPageComponent } from './Login/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { CalendarComponent } from './AdminPannel/calendar/calendar.component';
     PeopleComponent,
     AdvancedComponent,
     InterviewsComponent,
-    CalendarComponent
+    CalendarComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
